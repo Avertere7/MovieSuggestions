@@ -33,7 +33,8 @@ namespace MovieSuggestions
                         continue;
 
                     Rating rating = new Rating(cells[i],rate);
-                    user.ratings.Add(rating);
+                    if(!user.ratings.Any(r=>r.Movie==rating.Movie)) // check for duplicate 
+                        user.ratings.Add(rating);
                 }
                 yield return user;
                 

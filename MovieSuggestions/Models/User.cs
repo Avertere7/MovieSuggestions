@@ -10,7 +10,7 @@ namespace MovieSuggestions
         public string name { get; set; }
         public List<Rating> ratings {get;set;}
 
-
+        public double scores { get; set; }
         public User(string name)
         {
             this.name = name;
