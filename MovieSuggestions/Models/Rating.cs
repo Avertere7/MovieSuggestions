@@ -9,7 +9,8 @@ namespace MovieSuggestions.Models
     {
         private string movie;
         public int rating { get; set; }
-       
+
+        public string displayMovie { get; set; }
         public string Movie { 
             get
             {
@@ -18,12 +19,14 @@ namespace MovieSuggestions.Models
             set
             {
                 this.movie = removeSymbols(value);
+                this.displayMovie = value;
             }
         }
         public Rating(string movie, int rating)
         {
             this.rating = rating;
             this.movie = removeSymbols(movie);
+            this.displayMovie = movie;
         }
 
         private string  removeSymbols( string name)
