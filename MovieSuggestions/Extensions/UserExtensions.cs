@@ -16,7 +16,6 @@ namespace MovieSuggestions.Extensions
             {
                 tmp.AddRange(u.ratings.ToList().Where(r => !movies.Contains(r.Movie)));
             });
-            var x = tmp.OrderByDescending(x => x.rating).Take(10).ToList();
             return best ? tmp.OrderByDescending(x => x.rating).Select(m => m.displayMovie).Take(10).ToList() : tmp.OrderBy(x => x.rating).Select(m => m.displayMovie).Take(10).ToList();
 
         }
